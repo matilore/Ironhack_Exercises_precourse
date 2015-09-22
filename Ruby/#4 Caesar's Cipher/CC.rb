@@ -4,6 +4,7 @@ def cc()
 	text = gets.chomp 
 	puts "Please, specify a number for the cryptographic degree."
 	puts "If no number is specified default value will be applied"
+	puts "NUMBER MUST BE INCLUDED IN A RANGE BETWEEN -25 AND 25"
 	number = gets.chomp
 	#if no number is written -> use -3 as default
 	if number == ""
