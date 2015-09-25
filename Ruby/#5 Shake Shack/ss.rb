@@ -3,7 +3,7 @@ class Ingredient
 	def initialize(name, price)
 	@name = name
 	@price = price
-end
+	end
 end
 
 banana = Ingredient.new("Banana", 3)
@@ -51,10 +51,10 @@ class ShakeShop
 			ms.ingredients.each do |x|
 			@message += x.name + " "
 		end
-		@message +=  "for a total cost of " + ms.total_price.to_str + " $"
+		@message +=  "for a total cost of " + ms.total_price.to_s + " $"
 	end
 	puts @message
-end
+	end
 end
 
 shop_cart = ShakeShop.new
@@ -90,7 +90,6 @@ shop_cart = ShakeShop.new
 	answer = gets.chomp.downcase
 	
 end
-
 
 =begin
 
