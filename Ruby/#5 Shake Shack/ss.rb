@@ -50,9 +50,9 @@ class ShakeShop
 		@milkshakes.each do |ms|
 			ms.ingredients.each do |x|
 			@message += x.name + " "
-		end
+			end
 		@message +=  "for a total cost of " + ms.total_price.to_s + " $"
-	end
+		end
 	puts @message
 	end
 end
