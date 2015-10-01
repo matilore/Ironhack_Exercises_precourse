@@ -70,6 +70,7 @@ function findLongestWord( array_words ){
 	for(var i = 0; i < array_words.length; i++){
 		nums.push(array_words[i].length);
 	}
+
 	return Math.max.apply(Math, nums);
 }
 
@@ -102,10 +103,13 @@ console.log( calculateAverage( array_lengths ) === 6 && "The average of longest 
 function calculateAverage( array )
 {
 	total = 0;
+
 	for (var i = 0; i < array.length; i++) {
 		total += array[i];
 	};
+
 	average = total / array.length;
+
 	return average;
 }
 
@@ -129,16 +133,20 @@ function calculateAverage( array )
 /*
 
 function charFreq( string ) {
+
 	freqCounter = {};
+
 	string_ar = string.split("");
+
 	for (var i = 0; i < string_ar.length; i++) {
 		if (freqCounter[string_ar[i]] == null) {
-	freqCounter[string_ar[i]] = 1;
-	} else {
-		freqCounter[string_ar[i]] += 1;
-	}
-}
-return freqCounter;
+			freqCounter[string_ar[i]] = 1;
+		} else {
+			freqCounter[string_ar[i]] += 1;
+		}
+	}	
+
+	return freqCounter;
 }
 
 
@@ -197,11 +205,13 @@ function deleteRubbish( array )
 {
 	//It receives an array and returns it without '*' chars
 	//Example:  deleteRubbish(['a',1,'*',5]) returns ['a',1,5]
+
 	for (var i = 0; i < array.length; i++) {
 		if (array[i] == "*") {
 			array.splice(i, 1);
 		}
 	}
+
 	return array;
 }
 
@@ -211,7 +221,9 @@ function arrangeElements( array )
 	//It receives an array with numbers and letters mixed and returns it with its items arrange:
 	//First goes the numbers and then the letters. The order of the elements together does not matter.
 	//Example: arrangeElements(['B', 'a', 4 , 23, 'J']) returns [23, 4, 'B', 'a', 'J']
+	
 	array.sort();
+
 	return array;
 }
 
@@ -222,17 +234,19 @@ function beautifyLetters( array ) {
 	//Example: beautifyLetters([1,5,7,'a','J',p,'E']) returns [1,5,7,'A','j',p,'E']
 
 	var vowels = ["a", "e", "i", "o", "u"];
+
 	for (var i = 0; i < array.length; i++) {
 		if (isNaN(array[i])) {
 			if (vowels.indexOf(array[i]) >= 0) {
-			array[i] = array[i].toUpperCase();
+				array[i] = array[i].toUpperCase();
 			} else if (vowels.indexOf(array[i].toLowerCase()) >= 0) {
-			array[i] = array[i].toUpperCase();
+				array[i] = array[i].toUpperCase();
 			} else {
 				array[i] = array[i].toLowerCase();
 			}
 		}
 	}
+
 	return array;
 }
 
@@ -251,25 +265,28 @@ function beautifyNumbers( array )
 	//Example: beautifyNumbers([23,59, 4,'A','b']) returns [5, 5, 4, 'A', 'b']
 
 	function synt () {
+
 		array[i] = array[i].toString().split("");
-			for (var j = 0; j < array[i].length; j++) {
+
+		for (var j = 0; j < array[i].length; j++) {
 			array[i][j] = parseFloat(array[i][j]);
-			};
-			array[i] = array[i].reduce(function(a, b) {
-				return a + b
-			});
 		};
 
+		array[i] = array[i].reduce(function(a, b) {
+			return a + b
+		});
+	};
 
 
 	for (var i = 0; i < array.length; i++) {
 		if (!isNaN(array[i])) {
 			do {
-			synt();
+				synt();
 			} while (array[i] > 9);
-}
-}
-return array;
+		}
+	}
+
+	return array;
 }
 
 
@@ -280,10 +297,10 @@ function sortArray( array )
 	//Example: sortArray([5,5, 4, 1, 'j', A','b', 'E']) returns [1, 4, 5, 5, 'A', 'b', 'E', 'j']
 
 	array = array.sort(function(a, b) {
+
 		if (!(isNaN(a)) && (isNaN(b))) {
 			return -1;
-		}
-		else if ((isNaN(a)) && !(isNaN(b))) {
+		} else if ((isNaN(a)) && !(isNaN(b))) {
 			return 1;
 		} else if ((isNaN(a)) && (isNaN(b))) {
 			return a.toLowerCase().localeCompare(b.toLowerCase());
@@ -291,6 +308,7 @@ function sortArray( array )
 			return a - b;
 		}
 	});
+
 	return array;
 }
 
@@ -305,7 +323,9 @@ function arrayToString( array )
 			array[i] = array[i].toString();
 		}
 	};
+
 	array = array.join("");
+
 	return array;
 }
 
